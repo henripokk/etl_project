@@ -1,0 +1,587 @@
+usage: panel [-h] [-v]
+             {copy_examples,examples,build,info,init,json,sampledata,secret,serve,static,oauth-secret,convert}
+             ...
+
+positional arguments:
+  {copy_examples,examples,build,info,init,json,sampledata,secret,serve,static,oauth-secret,convert}
+                        Sub-commands
+    copy_examples       Copy examples to the supplied path.
+    examples            Copy examples and fetch data (if any) to the supplied
+                        path. See copy-examples and fetch-data for more
+                        flexibility. NOTE: force operates both on example and
+                        data over-writing pre-existing files.
+    build               Manage and build a bokeh extension
+    info                Print information about Bokeh and Bokeh server
+                        configuration
+    init                Initialize a bokeh extension
+    json                Create JSON files for one or more applications
+    sampledata          Download the bokeh sample data sets
+    secret              Create a Bokeh secret key for use with Bokeh server
+    serve               Run a Bokeh server hosting one or more applications
+    static              Serve bokehjs' static assets (JavaScript, CSS, images,
+                        fonts, etc.)
+    oauth-secret        Create a Panel encryption key for use with Panel
+                        server
+    convert             Convert a Panel App to another format, e.g. a HTML
+                        file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+See '<command> --help' to read about a specific subcommand.
+/home/merlin/.local/lib/python3.8/site-packages/geopandas/_compat.py:124: UserWarning: The Shapely GEOS version (3.11.1-CAPI-1.17.1) is incompatible with the GEOS version PyGEOS was compiled with (3.10.4-CAPI-1.16.2). Conversions between both will be slow.
+  warnings.warn(
+2023-06-04 19:13:29,665 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+2023-06-04 19:13:29,666 User authentication hooks NOT provided (default user enabled)
+2023-06-04 19:13:29,667 Bokeh app running at: http://localhost:5006/dashboard
+2023-06-04 19:13:29,667 Starting Bokeh server with process id: 16512
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13459 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 61 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13459 non-null  int64   
+ 1   Juhtumi nr                                     13459 non-null  object  
+ 2   Toimumisaeg                                    13459 non-null  object  
+ 3   Isikuid                                        13384 non-null  float64 
+ 4   Hukkunuid                                      13459 non-null  int64   
+ 5   Vigastatuid                                    13459 non-null  int64   
+ 6   Sõidukeid                                      13384 non-null  float64 
+ 7   Aadress (PPA)                                  13381 non-null  object  
+ 8   Maja nr (PPA)                                  6271 non-null   object  
+ 9   Tänav (PPA)                                    12845 non-null  object  
+ 10  Ristuv tänav (PPA)                             2487 non-null   object  
+ 11  Maakond (PPA)                                  13456 non-null  object  
+ 12  Omavalitsus (PPA)                              13451 non-null  object  
+ 13  Asustus (PPA)                                  8193 non-null   object  
+ 14  Asula                                          13459 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13459 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13459 non-null  category
+ 17  Kergliikurijuhi osalusel                       13339 non-null  float64 
+ 18  Jalakäija osalusel                             13339 non-null  float64 
+ 19  Kaassõitja osalusel                            13339 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  13339 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          13339 non-null  float64 
+ 22  Bussijuhi osalusel                             13339 non-null  float64 
+ 23  Veoautojuhi osalusel                           13339 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       13339 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         13339 non-null  float64 
+ 26  Mootorratturi osalusel                         13339 non-null  float64 
+ 27  Mopeedijuhi osalusel                           13339 non-null  float64 
+ 28  Jalgratturi osalusel                           13339 non-null  float64 
+ 29  Alaealise osalusel                             13339 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  13339 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                13339 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     13339 non-null  float64 
+ 33  Tüüpskeemi nr                                  13089 non-null  float64 
+ 34  Tüüpskeem [2]                                  13089 non-null  object  
+ 35  Tee tüüp [1]                                   13383 non-null  object  
+ 36  Tee tüüp [2]                                   13383 non-null  object  
+ 37  Tee element [1]                                13055 non-null  object  
+ 38  Tee element [2]                                13055 non-null  object  
+ 39  Tee objekt [2]                                 13079 non-null  object  
+ 40  Kurvilisus                                     13121 non-null  object  
+ 41  Tee tasasus                                    13173 non-null  object  
+ 42  Tee seisund                                    13221 non-null  object  
+ 43  Teekate                                        13260 non-null  object  
+ 44  Teekatte seisund [2]                           13261 non-null  object  
+ 45  Sõiduradade arv                                4181 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13089 non-null  category
+ 47  Tee nr (PPA)                                   4299 non-null   float64 
+ 48  Tee km (PPA)                                   4302 non-null   object  
+ 49  Ilmastik [1]                                   13256 non-null  object  
+ 50  Valgustus [1]                                  13255 non-null  object  
+ 51  Valgustus [2]                                  13255 non-null  object  
+ 52  GPS X                                          13459 non-null  int64   
+ 53  GPS Y                                          13459 non-null  int64   
+ 54  Asukoht                                        13459 non-null  object  
+ 55  lon                                            13459 non-null  float64 
+ 56  lat                                            13459 non-null  float64 
+ 57  year                                           13459 non-null  category
+ 58  month                                          13459 non-null  category
+ 59  day_of_week                                    13459 non-null  category
+ 60  hour_of_day                                    7995 non-null   float64 
+dtypes: category(5), float64(23), int64(5), object(28)
+memory usage: 6.4+ MB
+2023-06-04 19:13:39,408 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1025', ...)
+2023-06-04 19:13:39,409 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1021', ...)
+2023-06-04 19:13:39,409 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1023', ...)
+2023-06-04 19:13:40,022 WebSocket connection opened
+2023-06-04 19:13:40,023 ServerConnection created
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13459 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 61 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13459 non-null  int64   
+ 1   Juhtumi nr                                     13459 non-null  object  
+ 2   Toimumisaeg                                    13459 non-null  object  
+ 3   Isikuid                                        13384 non-null  float64 
+ 4   Hukkunuid                                      13459 non-null  int64   
+ 5   Vigastatuid                                    13459 non-null  int64   
+ 6   Sõidukeid                                      13384 non-null  float64 
+ 7   Aadress (PPA)                                  13381 non-null  object  
+ 8   Maja nr (PPA)                                  6271 non-null   object  
+ 9   Tänav (PPA)                                    12845 non-null  object  
+ 10  Ristuv tänav (PPA)                             2487 non-null   object  
+ 11  Maakond (PPA)                                  13456 non-null  object  
+ 12  Omavalitsus (PPA)                              13451 non-null  object  
+ 13  Asustus (PPA)                                  8193 non-null   object  
+ 14  Asula                                          13459 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13459 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13459 non-null  category
+ 17  Kergliikurijuhi osalusel                       13339 non-null  float64 
+ 18  Jalakäija osalusel                             13339 non-null  float64 
+ 19  Kaassõitja osalusel                            13339 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  13339 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          13339 non-null  float64 
+ 22  Bussijuhi osalusel                             13339 non-null  float64 
+ 23  Veoautojuhi osalusel                           13339 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       13339 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         13339 non-null  float64 
+ 26  Mootorratturi osalusel                         13339 non-null  float64 
+ 27  Mopeedijuhi osalusel                           13339 non-null  float64 
+ 28  Jalgratturi osalusel                           13339 non-null  float64 
+ 29  Alaealise osalusel                             13339 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  13339 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                13339 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     13339 non-null  float64 
+ 33  Tüüpskeemi nr                                  13089 non-null  float64 
+ 34  Tüüpskeem [2]                                  13089 non-null  object  
+ 35  Tee tüüp [1]                                   13383 non-null  object  
+ 36  Tee tüüp [2]                                   13383 non-null  object  
+ 37  Tee element [1]                                13055 non-null  object  
+ 38  Tee element [2]                                13055 non-null  object  
+ 39  Tee objekt [2]                                 13079 non-null  object  
+ 40  Kurvilisus                                     13121 non-null  object  
+ 41  Tee tasasus                                    13173 non-null  object  
+ 42  Tee seisund                                    13221 non-null  object  
+ 43  Teekate                                        13260 non-null  object  
+ 44  Teekatte seisund [2]                           13261 non-null  object  
+ 45  Sõiduradade arv                                4181 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13089 non-null  category
+ 47  Tee nr (PPA)                                   4299 non-null   float64 
+ 48  Tee km (PPA)                                   4302 non-null   object  
+ 49  Ilmastik [1]                                   13256 non-null  object  
+ 50  Valgustus [1]                                  13255 non-null  object  
+ 51  Valgustus [2]                                  13255 non-null  object  
+ 52  GPS X                                          13459 non-null  int64   
+ 53  GPS Y                                          13459 non-null  int64   
+ 54  Asukoht                                        13459 non-null  object  
+ 55  lon                                            13459 non-null  float64 
+ 56  lat                                            13459 non-null  float64 
+ 57  year                                           13459 non-null  category
+ 58  month                                          13459 non-null  category
+ 59  day_of_week                                    13459 non-null  category
+ 60  hour_of_day                                    7995 non-null   float64 
+dtypes: category(5), float64(23), int64(5), object(28)
+memory usage: 6.4+ MB
+2023-06-04 21:07:30,905 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1778', ...)
+2023-06-04 21:07:30,905 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1776', ...)
+2023-06-04 21:07:30,905 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1774', ...)
+2023-06-04 21:07:30,936 WebSocket connection closed: code=1001, reason=None
+2023-06-04 21:07:31,958 WebSocket connection opened
+2023-06-04 21:07:31,958 ServerConnection created
+2023-06-05 05:09:46,766 error on read: [Errno 113] No route to host
+2023-06-05 05:09:46,766 WebSocket connection closed: code=None, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13459 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 61 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13459 non-null  int64   
+ 1   Juhtumi nr                                     13459 non-null  object  
+ 2   Toimumisaeg                                    13459 non-null  object  
+ 3   Isikuid                                        13384 non-null  float64 
+ 4   Hukkunuid                                      13459 non-null  int64   
+ 5   Vigastatuid                                    13459 non-null  int64   
+ 6   Sõidukeid                                      13384 non-null  float64 
+ 7   Aadress (PPA)                                  13381 non-null  object  
+ 8   Maja nr (PPA)                                  6271 non-null   object  
+ 9   Tänav (PPA)                                    12845 non-null  object  
+ 10  Ristuv tänav (PPA)                             2487 non-null   object  
+ 11  Maakond (PPA)                                  13456 non-null  object  
+ 12  Omavalitsus (PPA)                              13451 non-null  object  
+ 13  Asustus (PPA)                                  8193 non-null   object  
+ 14  Asula                                          13459 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13459 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13459 non-null  category
+ 17  Kergliikurijuhi osalusel                       13339 non-null  float64 
+ 18  Jalakäija osalusel                             13339 non-null  float64 
+ 19  Kaassõitja osalusel                            13339 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  13339 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          13339 non-null  float64 
+ 22  Bussijuhi osalusel                             13339 non-null  float64 
+ 23  Veoautojuhi osalusel                           13339 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       13339 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         13339 non-null  float64 
+ 26  Mootorratturi osalusel                         13339 non-null  float64 
+ 27  Mopeedijuhi osalusel                           13339 non-null  float64 
+ 28  Jalgratturi osalusel                           13339 non-null  float64 
+ 29  Alaealise osalusel                             13339 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  13339 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                13339 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     13339 non-null  float64 
+ 33  Tüüpskeemi nr                                  13089 non-null  float64 
+ 34  Tüüpskeem [2]                                  13089 non-null  object  
+ 35  Tee tüüp [1]                                   13383 non-null  object  
+ 36  Tee tüüp [2]                                   13383 non-null  object  
+ 37  Tee element [1]                                13055 non-null  object  
+ 38  Tee element [2]                                13055 non-null  object  
+ 39  Tee objekt [2]                                 13079 non-null  object  
+ 40  Kurvilisus                                     13121 non-null  object  
+ 41  Tee tasasus                                    13173 non-null  object  
+ 42  Tee seisund                                    13221 non-null  object  
+ 43  Teekate                                        13260 non-null  object  
+ 44  Teekatte seisund [2]                           13261 non-null  object  
+ 45  Sõiduradade arv                                4181 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13089 non-null  category
+ 47  Tee nr (PPA)                                   4299 non-null   float64 
+ 48  Tee km (PPA)                                   4302 non-null   object  
+ 49  Ilmastik [1]                                   13256 non-null  object  
+ 50  Valgustus [1]                                  13255 non-null  object  
+ 51  Valgustus [2]                                  13255 non-null  object  
+ 52  GPS X                                          13459 non-null  int64   
+ 53  GPS Y                                          13459 non-null  int64   
+ 54  Asukoht                                        13459 non-null  object  
+ 55  lon                                            13459 non-null  float64 
+ 56  lat                                            13459 non-null  float64 
+ 57  year                                           13459 non-null  category
+ 58  month                                          13459 non-null  category
+ 59  day_of_week                                    13459 non-null  category
+ 60  hour_of_day                                    7995 non-null   float64 
+dtypes: category(5), float64(23), int64(5), object(28)
+memory usage: 6.4+ MB
+2023-06-05 20:41:49,960 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1899', ...)
+2023-06-05 20:41:49,960 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1895', ...)
+2023-06-05 20:41:49,960 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1897', ...)
+2023-06-05 20:41:51,739 404 GET /favicon.ico (192.168.88.137) 0.96ms
+2023-06-05 20:41:51,767 WebSocket connection opened
+2023-06-05 20:41:51,768 ServerConnection created
+2023-06-05 20:48:12,787 WebSocket connection closed: code=1001, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13071 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 63 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13071 non-null  int64   
+ 1   Juhtumi nr                                     13071 non-null  object  
+ 2   Toimumisaeg                                    13071 non-null  object  
+ 3   Isikuid                                        13071 non-null  int64   
+ 4   Hukkunuid                                      13071 non-null  int64   
+ 5   Vigastatuid                                    13071 non-null  int64   
+ 6   Sõidukeid                                      13071 non-null  int64   
+ 7   Aadress (PPA)                                  13068 non-null  object  
+ 8   Maja nr (PPA)                                  6013 non-null   object  
+ 9   Tänav (PPA)                                    12513 non-null  object  
+ 10  Ristuv tänav (PPA)                             2465 non-null   object  
+ 11  Maakond (PPA)                                  13068 non-null  object  
+ 12  Omavalitsus (PPA)                              13063 non-null  object  
+ 13  Asustus (PPA)                                  7903 non-null   object  
+ 14  Asula                                          13071 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13071 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13071 non-null  category
+ 17  Kergliikurijuhi osalusel                       12978 non-null  float64 
+ 18  Jalakäija osalusel                             12978 non-null  float64 
+ 19  Kaassõitja osalusel                            12978 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  12978 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          12978 non-null  float64 
+ 22  Bussijuhi osalusel                             12978 non-null  float64 
+ 23  Veoautojuhi osalusel                           12978 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       12978 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         12978 non-null  float64 
+ 26  Mootorratturi osalusel                         12978 non-null  float64 
+ 27  Mopeedijuhi osalusel                           12978 non-null  float64 
+ 28  Jalgratturi osalusel                           12978 non-null  float64 
+ 29  Alaealise osalusel                             12978 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  12978 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                12978 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     12978 non-null  float64 
+ 33  Tüüpskeemi nr                                  12870 non-null  float64 
+ 34  Tüüpskeem [2]                                  12870 non-null  object  
+ 35  Tee tüüp [1]                                   13036 non-null  object  
+ 36  Tee tüüp [2]                                   13036 non-null  object  
+ 37  Tee element [1]                                12853 non-null  object  
+ 38  Tee element [2]                                12853 non-null  object  
+ 39  Tee objekt [2]                                 12875 non-null  object  
+ 40  Kurvilisus                                     12917 non-null  object  
+ 41  Tee tasasus                                    12968 non-null  object  
+ 42  Tee seisund                                    13018 non-null  object  
+ 43  Teekate                                        13042 non-null  object  
+ 44  Teekatte seisund [2]                           13050 non-null  object  
+ 45  Sõiduradade arv                                4094 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13071 non-null  category
+ 47  Tee nr (PPA)                                   4232 non-null   float64 
+ 48  Tee km (PPA)                                   4235 non-null   object  
+ 49  Ilmastik [1]                                   13040 non-null  object  
+ 50  Valgustus [1]                                  13031 non-null  object  
+ 51  Valgustus [2]                                  13031 non-null  object  
+ 52  GPS X                                          13071 non-null  int64   
+ 53  GPS Y                                          13071 non-null  int64   
+ 54  Asukoht                                        13071 non-null  object  
+ 55  Nearest_Location                               13071 non-null  object  
+ 56  Temperature                                    13071 non-null  float64 
+ 57  lon                                            13071 non-null  float64 
+ 58  lat                                            13071 non-null  float64 
+ 59  year                                           13071 non-null  category
+ 60  month                                          13071 non-null  category
+ 61  day_of_week                                    13071 non-null  category
+ 62  hour_of_day                                    7774 non-null   float64 
+dtypes: category(5), float64(22), int64(7), object(29)
+memory usage: 6.5+ MB
+2023-06-05 20:48:13,691 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3057', ...)
+2023-06-05 20:48:13,691 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3059', ...)
+2023-06-05 20:48:13,691 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3055', ...)
+2023-06-05 20:48:14,802 404 GET /favicon.ico (192.168.88.137) 0.86ms
+2023-06-05 20:48:14,874 WebSocket connection opened
+2023-06-05 20:48:14,875 ServerConnection created
+2023-06-05 20:50:13,342 WebSocket connection closed: code=1001, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13071 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 63 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13071 non-null  int64   
+ 1   Juhtumi nr                                     13071 non-null  object  
+ 2   Toimumisaeg                                    13071 non-null  object  
+ 3   Isikuid                                        13071 non-null  int64   
+ 4   Hukkunuid                                      13071 non-null  int64   
+ 5   Vigastatuid                                    13071 non-null  int64   
+ 6   Sõidukeid                                      13071 non-null  int64   
+ 7   Aadress (PPA)                                  13068 non-null  object  
+ 8   Maja nr (PPA)                                  6013 non-null   object  
+ 9   Tänav (PPA)                                    12513 non-null  object  
+ 10  Ristuv tänav (PPA)                             2465 non-null   object  
+ 11  Maakond (PPA)                                  13068 non-null  object  
+ 12  Omavalitsus (PPA)                              13063 non-null  object  
+ 13  Asustus (PPA)                                  7903 non-null   object  
+ 14  Asula                                          13071 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13071 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13071 non-null  category
+ 17  Kergliikurijuhi osalusel                       12978 non-null  float64 
+ 18  Jalakäija osalusel                             12978 non-null  float64 
+ 19  Kaassõitja osalusel                            12978 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  12978 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          12978 non-null  float64 
+ 22  Bussijuhi osalusel                             12978 non-null  float64 
+ 23  Veoautojuhi osalusel                           12978 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       12978 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         12978 non-null  float64 
+ 26  Mootorratturi osalusel                         12978 non-null  float64 
+ 27  Mopeedijuhi osalusel                           12978 non-null  float64 
+ 28  Jalgratturi osalusel                           12978 non-null  float64 
+ 29  Alaealise osalusel                             12978 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  12978 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                12978 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     12978 non-null  float64 
+ 33  Tüüpskeemi nr                                  12870 non-null  float64 
+ 34  Tüüpskeem [2]                                  12870 non-null  object  
+ 35  Tee tüüp [1]                                   13036 non-null  object  
+ 36  Tee tüüp [2]                                   13036 non-null  object  
+ 37  Tee element [1]                                12853 non-null  object  
+ 38  Tee element [2]                                12853 non-null  object  
+ 39  Tee objekt [2]                                 12875 non-null  object  
+ 40  Kurvilisus                                     12917 non-null  object  
+ 41  Tee tasasus                                    12968 non-null  object  
+ 42  Tee seisund                                    13018 non-null  object  
+ 43  Teekate                                        13042 non-null  object  
+ 44  Teekatte seisund [2]                           13050 non-null  object  
+ 45  Sõiduradade arv                                4094 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13071 non-null  category
+ 47  Tee nr (PPA)                                   4232 non-null   float64 
+ 48  Tee km (PPA)                                   4235 non-null   object  
+ 49  Ilmastik [1]                                   13040 non-null  object  
+ 50  Valgustus [1]                                  13031 non-null  object  
+ 51  Valgustus [2]                                  13031 non-null  object  
+ 52  GPS X                                          13071 non-null  int64   
+ 53  GPS Y                                          13071 non-null  int64   
+ 54  Asukoht                                        13071 non-null  object  
+ 55  Nearest_Location                               13071 non-null  object  
+ 56  Temperature                                    13071 non-null  float64 
+ 57  lon                                            13071 non-null  float64 
+ 58  lat                                            13071 non-null  float64 
+ 59  year                                           13071 non-null  category
+ 60  month                                          13071 non-null  category
+ 61  day_of_week                                    13071 non-null  category
+ 62  hour_of_day                                    7774 non-null   float64 
+dtypes: category(5), float64(22), int64(7), object(29)
+memory usage: 6.5+ MB
+2023-06-05 20:50:14,284 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3179', ...)
+2023-06-05 20:50:14,284 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3183', ...)
+2023-06-05 20:50:14,284 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3181', ...)
+2023-06-05 20:50:15,027 WebSocket connection opened
+2023-06-05 20:50:15,028 ServerConnection created
+2023-06-05 20:52:13,976 WebSocket connection closed: code=1001, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13071 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 63 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13071 non-null  int64   
+ 1   Juhtumi nr                                     13071 non-null  object  
+ 2   Toimumisaeg                                    13071 non-null  object  
+ 3   Isikuid                                        13071 non-null  int64   
+ 4   Hukkunuid                                      13071 non-null  int64   
+ 5   Vigastatuid                                    13071 non-null  int64   
+ 6   Sõidukeid                                      13071 non-null  int64   
+ 7   Aadress (PPA)                                  13068 non-null  object  
+ 8   Maja nr (PPA)                                  6013 non-null   object  
+ 9   Tänav (PPA)                                    12513 non-null  object  
+ 10  Ristuv tänav (PPA)                             2465 non-null   object  
+ 11  Maakond (PPA)                                  13068 non-null  object  
+ 12  Omavalitsus (PPA)                              13063 non-null  object  
+ 13  Asustus (PPA)                                  7903 non-null   object  
+ 14  Asula                                          13071 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13071 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13071 non-null  category
+ 17  Kergliikurijuhi osalusel                       12978 non-null  float64 
+ 18  Jalakäija osalusel                             12978 non-null  float64 
+ 19  Kaassõitja osalusel                            12978 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  12978 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          12978 non-null  float64 
+ 22  Bussijuhi osalusel                             12978 non-null  float64 
+ 23  Veoautojuhi osalusel                           12978 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       12978 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         12978 non-null  float64 
+ 26  Mootorratturi osalusel                         12978 non-null  float64 
+ 27  Mopeedijuhi osalusel                           12978 non-null  float64 
+ 28  Jalgratturi osalusel                           12978 non-null  float64 
+ 29  Alaealise osalusel                             12978 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  12978 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                12978 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     12978 non-null  float64 
+ 33  Tüüpskeemi nr                                  12870 non-null  float64 
+ 34  Tüüpskeem [2]                                  12870 non-null  object  
+ 35  Tee tüüp [1]                                   13036 non-null  object  
+ 36  Tee tüüp [2]                                   13036 non-null  object  
+ 37  Tee element [1]                                12853 non-null  object  
+ 38  Tee element [2]                                12853 non-null  object  
+ 39  Tee objekt [2]                                 12875 non-null  object  
+ 40  Kurvilisus                                     12917 non-null  object  
+ 41  Tee tasasus                                    12968 non-null  object  
+ 42  Tee seisund                                    13018 non-null  object  
+ 43  Teekate                                        13042 non-null  object  
+ 44  Teekatte seisund [2]                           13050 non-null  object  
+ 45  Sõiduradade arv                                4094 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13071 non-null  category
+ 47  Tee nr (PPA)                                   4232 non-null   float64 
+ 48  Tee km (PPA)                                   4235 non-null   object  
+ 49  Ilmastik [1]                                   13040 non-null  object  
+ 50  Valgustus [1]                                  13031 non-null  object  
+ 51  Valgustus [2]                                  13031 non-null  object  
+ 52  GPS X                                          13071 non-null  int64   
+ 53  GPS Y                                          13071 non-null  int64   
+ 54  Asukoht                                        13071 non-null  object  
+ 55  Nearest_Location                               13071 non-null  object  
+ 56  Temperature                                    13071 non-null  float64 
+ 57  lon                                            13071 non-null  float64 
+ 58  lat                                            13071 non-null  float64 
+ 59  year                                           13071 non-null  category
+ 60  month                                          13071 non-null  category
+ 61  day_of_week                                    13071 non-null  category
+ 62  hour_of_day                                    7774 non-null   float64 
+dtypes: category(5), float64(22), int64(7), object(29)
+memory usage: 6.5+ MB
+2023-06-05 20:52:14,851 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3318', ...)
+2023-06-05 20:52:14,851 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3322', ...)
+2023-06-05 20:52:14,851 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3320', ...)
+2023-06-05 20:52:15,748 404 GET /favicon.ico (192.168.88.137) 0.57ms
+2023-06-05 20:52:15,830 WebSocket connection opened
+2023-06-05 20:52:15,831 ServerConnection created
+2023-06-05 20:54:14,378 WebSocket connection closed: code=1001, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13071 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 63 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13071 non-null  int64   
+ 1   Juhtumi nr                                     13071 non-null  object  
+ 2   Toimumisaeg                                    13071 non-null  object  
+ 3   Isikuid                                        13071 non-null  int64   
+ 4   Hukkunuid                                      13071 non-null  int64   
+ 5   Vigastatuid                                    13071 non-null  int64   
+ 6   Sõidukeid                                      13071 non-null  int64   
+ 7   Aadress (PPA)                                  13068 non-null  object  
+ 8   Maja nr (PPA)                                  6013 non-null   object  
+ 9   Tänav (PPA)                                    12513 non-null  object  
+ 10  Ristuv tänav (PPA)                             2465 non-null   object  
+ 11  Maakond (PPA)                                  13068 non-null  object  
+ 12  Omavalitsus (PPA)                              13063 non-null  object  
+ 13  Asustus (PPA)                                  7903 non-null   object  
+ 14  Asula                                          13071 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13071 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13071 non-null  category
+ 17  Kergliikurijuhi osalusel                       12978 non-null  float64 
+ 18  Jalakäija osalusel                             12978 non-null  float64 
+ 19  Kaassõitja osalusel                            12978 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  12978 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          12978 non-null  float64 
+ 22  Bussijuhi osalusel                             12978 non-null  float64 
+ 23  Veoautojuhi osalusel                           12978 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       12978 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         12978 non-null  float64 
+ 26  Mootorratturi osalusel                         12978 non-null  float64 
+ 27  Mopeedijuhi osalusel                           12978 non-null  float64 
+ 28  Jalgratturi osalusel                           12978 non-null  float64 
+ 29  Alaealise osalusel                             12978 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  12978 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                12978 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     12978 non-null  float64 
+ 33  Tüüpskeemi nr                                  12870 non-null  float64 
+ 34  Tüüpskeem [2]                                  12870 non-null  object  
+ 35  Tee tüüp [1]                                   13036 non-null  object  
+ 36  Tee tüüp [2]                                   13036 non-null  object  
+ 37  Tee element [1]                                12853 non-null  object  
+ 38  Tee element [2]                                12853 non-null  object  
+ 39  Tee objekt [2]                                 12875 non-null  object  
+ 40  Kurvilisus                                     12917 non-null  object  
+ 41  Tee tasasus                                    12968 non-null  object  
+ 42  Tee seisund                                    13018 non-null  object  
+ 43  Teekate                                        13042 non-null  object  
+ 44  Teekatte seisund [2]                           13050 non-null  object  
+ 45  Sõiduradade arv                                4094 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13071 non-null  category
+ 47  Tee nr (PPA)                                   4232 non-null   float64 
+ 48  Tee km (PPA)                                   4235 non-null   object  
+ 49  Ilmastik [1]                                   13040 non-null  object  
+ 50  Valgustus [1]                                  13031 non-null  object  
+ 51  Valgustus [2]                                  13031 non-null  object  
+ 52  GPS X                                          13071 non-null  int64   
+ 53  GPS Y                                          13071 non-null  int64   
+ 54  Asukoht                                        13071 non-null  object  
+ 55  Nearest_Location                               13071 non-null  object  
+ 56  Temperature                                    13071 non-null  float64 
+ 57  lon                                            13071 non-null  float64 
+ 58  lat                                            13071 non-null  float64 
+ 59  year                                           13071 non-null  category
+ 60  month                                          13071 non-null  category
+ 61  day_of_week                                    13071 non-null  category
+ 62  hour_of_day                                    7774 non-null   float64 
+dtypes: category(5), float64(22), int64(7), object(29)
+memory usage: 6.5+ MB
+2023-06-05 20:54:15,246 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3459', ...)
+2023-06-05 20:54:15,246 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3457', ...)
+2023-06-05 20:54:15,246 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3461', ...)
+2023-06-05 20:54:15,899 404 GET /favicon.ico (192.168.88.137) 0.64ms
+2023-06-05 20:54:15,912 WebSocket connection opened
+2023-06-05 20:54:15,913 ServerConnection created
+2023-06-05 20:56:14,954 WebSocket connection closed: code=1001, reason=None
+2023-06-05 20:56:16,055 404 GET /favicon.ico (192.168.88.137) 0.60ms
+2023-06-05 20:56:16,123 WebSocket connection opened
+2023-06-05 20:56:16,124 ServerConnection created
+2023-06-05 20:58:15,749 WebSocket connection closed: code=1001, reason=None
+2023-06-05 20:58:16,071 Error running application handler <bokeh.application.handlers.notebook.NotebookHandler object at 0x7f3d24900370>: Invalid syntax in 'dashboard.ipynb' on line 190:
+    if liik == "Ilmaolud":
+ Traceback (most recent call last):
+  File "/home/merlin/.local/lib/python3.8/site-packages/bokeh/application/handlers/code_runner.py", line 106, in __init__
+    nodes = ast.parse(source, os.fspath(path))
+  File "/usr/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "/home/merlin/kool/etl_project/dashboard.ipynb", line 190
+    if liik == "Ilmaolud":
+    ^
+IndentationError: unexpected indent
+ 
+2023-06-05 20:58:16,654 WebSocket connection opened
+2023-06-05 20:58:16,655 ServerConnection created
