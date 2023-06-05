@@ -585,3 +585,80 @@ IndentationError: unexpected indent
  
 2023-06-05 20:58:16,654 WebSocket connection opened
 2023-06-05 20:58:16,655 ServerConnection created
+2023-06-05 21:36:52,882 WebSocket connection closed: code=1001, reason=None
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13071 entries, 2011-01-05 00:00:00 to 2021-12-31 23:45:00
+Data columns (total 63 columns):
+ #   Column                                         Non-Null Count  Dtype   
+---  ------                                         --------------  -----   
+ 0   Unnamed: 0                                     13071 non-null  int64   
+ 1   Juhtumi nr                                     13071 non-null  object  
+ 2   Toimumisaeg                                    13071 non-null  object  
+ 3   Isikuid                                        13071 non-null  int64   
+ 4   Hukkunuid                                      13071 non-null  int64   
+ 5   Vigastatuid                                    13071 non-null  int64   
+ 6   Sõidukeid                                      13071 non-null  int64   
+ 7   Aadress (PPA)                                  13068 non-null  object  
+ 8   Maja nr (PPA)                                  6013 non-null   object  
+ 9   Tänav (PPA)                                    12513 non-null  object  
+ 10  Ristuv tänav (PPA)                             2465 non-null   object  
+ 11  Maakond (PPA)                                  13068 non-null  object  
+ 12  Omavalitsus (PPA)                              13063 non-null  object  
+ 13  Asustus (PPA)                                  7903 non-null   object  
+ 14  Asula                                          13071 non-null  object  
+ 15  Liiklusõnnetuse liik [1]                       13071 non-null  object  
+ 16  Liiklusõnnetuse liik [3]                       13071 non-null  category
+ 17  Kergliikurijuhi osalusel                       12978 non-null  float64 
+ 18  Jalakäija osalusel                             12978 non-null  float64 
+ 19  Kaassõitja osalusel                            12978 non-null  float64 
+ 20  Maastikusõiduki juhi osalusel                  12978 non-null  float64 
+ 21  Eaka (65+) mootorsõidukijuhi osalusel          12978 non-null  float64 
+ 22  Bussijuhi osalusel                             12978 non-null  float64 
+ 23  Veoautojuhi osalusel                           12978 non-null  float64 
+ 24  Ühissõidukijuhi osalusel                       12978 non-null  float64 
+ 25  Sõiduautojuhi osalusel                         12978 non-null  float64 
+ 26  Mootorratturi osalusel                         12978 non-null  float64 
+ 27  Mopeedijuhi osalusel                           12978 non-null  float64 
+ 28  Jalgratturi osalusel                           12978 non-null  float64 
+ 29  Alaealise osalusel                             12978 non-null  float64 
+ 30  Turvavarustust mitte kasutanud isiku osalusel  12978 non-null  float64 
+ 31  Esmase juhiloa omaniku osalusel                12978 non-null  float64 
+ 32  Mootorsõidukijuhi osalusel                     12978 non-null  float64 
+ 33  Tüüpskeemi nr                                  12870 non-null  float64 
+ 34  Tüüpskeem [2]                                  12870 non-null  object  
+ 35  Tee tüüp [1]                                   13036 non-null  object  
+ 36  Tee tüüp [2]                                   13036 non-null  object  
+ 37  Tee element [1]                                12853 non-null  object  
+ 38  Tee element [2]                                12853 non-null  object  
+ 39  Tee objekt [2]                                 12875 non-null  object  
+ 40  Kurvilisus                                     12917 non-null  object  
+ 41  Tee tasasus                                    12968 non-null  object  
+ 42  Tee seisund                                    13018 non-null  object  
+ 43  Teekate                                        13042 non-null  object  
+ 44  Teekatte seisund [2]                           13050 non-null  object  
+ 45  Sõiduradade arv                                4094 non-null   object  
+ 46  Lubatud sõidukiirus (PPA)                      13071 non-null  category
+ 47  Tee nr (PPA)                                   4232 non-null   float64 
+ 48  Tee km (PPA)                                   4235 non-null   object  
+ 49  Ilmastik [1]                                   13040 non-null  object  
+ 50  Valgustus [1]                                  13031 non-null  object  
+ 51  Valgustus [2]                                  13031 non-null  object  
+ 52  GPS X                                          13071 non-null  int64   
+ 53  GPS Y                                          13071 non-null  int64   
+ 54  Asukoht                                        13071 non-null  object  
+ 55  Nearest_Location                               13071 non-null  object  
+ 56  Temperature                                    13071 non-null  float64 
+ 57  lon                                            13071 non-null  float64 
+ 58  lat                                            13071 non-null  float64 
+ 59  year                                           13071 non-null  category
+ 60  month                                          13071 non-null  category
+ 61  day_of_week                                    13071 non-null  category
+ 62  hour_of_day                                    7774 non-null   float64 
+dtypes: category(5), float64(22), int64(7), object(29)
+memory usage: 6.5+ MB
+2023-06-05 21:36:53,855 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3621', ...)
+2023-06-05 21:36:53,855 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3619', ...)
+2023-06-05 21:36:53,855 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='3617', ...)
+2023-06-05 21:36:54,395 WebSocket connection opened
+2023-06-05 21:36:54,396 ServerConnection created
+2023-06-05 21:42:36,296 WebSocket connection closed: code=1001, reason=None
