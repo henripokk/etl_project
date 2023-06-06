@@ -150,7 +150,7 @@ perioodid
 # valikunupud liiklusolude joonistele
 
 olukord = pn.widgets.RadioButtonGroup(
-    name='Liiklusolukord', options=['Tee element', 'Tee objekt', 'Kurvilisus', 'Tee tasasus', 'Tee seisund', 'Teekate', 'Teekatte seisund', 'Piirkiirus'], button_type='default')
+    name='Liiklusolukord', options=['Tee element', 'Tee objekt', 'Kurvilisus', 'Tee tasasus', 'Tee seisund', 'Teekate', 'Piirkiirus'], button_type='default')
 
 olukord
 
@@ -160,37 +160,107 @@ olukord
 
 # multiselect widget for participant type
 # pole kasutusel
-
-multi_choice = pn.widgets.MultiChoice(name='Liiklusõnnetuse osalised', value=[],
-    options=['Jalakäija osalusel', 'Kergliikurijuhi osalusel', 'Kaassõitja osalusel', 'Maastikusõiduki juhi osalusel', "Eaka (65+) mootorsõidukijuhi osalusel",  "Bussijuhi osalusel", "Veoautojuhi osalusel", "Ühissõidukijuhi osalusel", "Sõiduautojuhi osalusel", "Mootorratturi osalusel", "Mopeedijuhi osalusel", "Jalgratturi osalusel", "Alaealise osalusel", "Turvavarustust mitte kasutanud isiku osalusel", "Esmase juhiloa omaniku osalusel", "Mootorsõidukijuhi osalusel"])
-
-pn.Column(multi_choice, height=400)
-#multi_choice
+options=['Jalakäija osalusel', 'Kergliikurijuhi osalusel', 'Kaassõitja osalusel', 'Maastikusõiduki juhi osalusel', "Eaka (65+) mootorsõidukijuhi osalusel",  "Bussijuhi osalusel", "Veoautojuhi osalusel", "Ühissõidukijuhi osalusel", "Sõiduautojuhi osalusel", "Mootorratturi osalusel", "Mopeedijuhi osalusel", "Jalgratturi osalusel", "Alaealise osalusel", "Turvavarustust mitte kasutanud isiku osalusel", "Esmase juhiloa omaniku osalusel", "Mootorsõidukijuhi osalusel"]
 
 
-# ## Siin teen joonised
+multi_choice = pn.widgets.MultiChoice(name='Liiklusõnnetuse osalised', value=options,
+    options=options, height=260, width=600)
+
+multi_choice
+
 
 # In[10]:
 
 
-# suured numbrid - hukkunud, vigastatud ja õnnetusi
-@pn.depends( pn.widgets.DateRangeSlider.param.value_throttled)
-def statistika(slider_value, veerg):
-    if veerg=="Õnnetusi":
-        return pn.indicators.Number(name=veerg, value=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1]),'Juhtumi nr'].count(), font_size = "36pt", width=150)  
-    else:
-        return pn.indicators.Number(name=veerg, value=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1]), veerg].sum(), font_size = "36pt", width=150)
+# ilmastiku jooniste nupud
+ilmastik = pn.widgets.RadioButtonGroup(
+    name='Ilmastiku seisund', options=['Ilmaolud', 'Valge aeg', 'Valgustus', 'Temperatuur', 'Teekatte seisund'], button_type='default')
 
-pn.Row(statistika(slider.value, 'Õnnetusi'),statistika(slider.value, 'Õnnetusi'))
+ilmastik
 
 
 # In[11]:
 
 
+ilmastik.value
+
+
+# In[12]:
+
+
+df[multi_choice.value].sum(axis=1)>0
+
+
+# ## vaatan kas saab andmed paremini esitatud
+
+# In[13]:
+
+
+def data(slider_value, multi_choice_value):
+    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]
+    df_kaart = df_kaart.loc[df_kaart[multi_choice_value].sum(axis=1)>0 ]
+    return df_kaart
+
+data(slider.value, multi_choice.value)[multi_choice.value]
+
+
+# In[14]:
+
+
+# suured numbrid - hukkunud, vigastatud ja õnnetusi
+@pn.depends( pn.widgets.DateRangeSlider.param.value_throttled)
+@pn.depends( pn.widgets.MultiChoice.param.value)
+def statistika(slider_value, multi_choice_value, veerg):
+    if veerg=="Õnnetusi":
+        return pn.indicators.Number(name=veerg, value=data(slider_value, multi_choice_value)['Juhtumi nr'].count(), font_size = "36pt", width=150)  
+    else:
+        return pn.indicators.Number(name=veerg, value=data(slider_value, multi_choice_value)[veerg].sum(), font_size = "36pt", width=150)
+
+pn.Row(statistika(slider.value, multi_choice.value, 'Õnnetusi'),statistika(slider.value, multi_choice.value, 'Õnnetusi'))
+
+
+
+# ## Siin teen joonised
+
+# In[15]:
+
+
 # liiklusõnnetused liiklusolude kaupa kaupa
 @pn.depends( pn.widgets.RadioButtonGroup.param.value)   
-def liiklusolud(liik, slider_value):
-    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]    
+def ilmastik_joonis(liik, multi_choice_value, slider_value):
+    df_kaart=data(slider_value, multi_choice_value)    
+    
+
+    # Counting the number of accidents for each time component
+    Ilmaolud = df_kaart["Ilmastik [1]"].value_counts().sort_index().sort_values()
+    Valge= df_kaart["Valgustus [1]"].value_counts().sort_index().sort_values()
+    Valgustus = df_kaart["Valgustus [2]"].value_counts().sort_index().sort_values()
+    Temperatuur = df_kaart["Temperature"].value_counts().sort_index().sort_values()
+    Teekate = df_kaart["Teekatte seisund [2]"].value_counts().sort_index().sort_values()
+    
+# Creating bar plots using Plotly
+    if liik == "Ilmaolud":
+        fig = px.bar(y=Ilmaolud.index, x=Ilmaolud.values, labels={'x': 'Õnnetuste arv'}, title='Õnnetuste arv erinevatelilmastiku olukordades')
+    elif liik == "Valge aeg": 
+        fig = px.bar(y=Valge.index, x=Valge.values, labels={'x': 'Õnnetuste arv'}, title='Õnnetuste arv valgel ja pimedal ajal')
+    elif liik == "Valgustus": 
+        fig = px.bar(y=Valgustus.index, x=Valgustus.values, labels={'x': 'Õnnetuste arv'}, title='Õnnetuste arv erineva valgustuse korral')
+    elif liik == "Temperatuur": 
+        fig = px.histogram(df_kaart, x="Temperature", labels={'x': 'Õnnetuste arv'}, title='Õnnetuste arv erinevate  temperatuuri korral')
+    elif liik == "Teekatte seisund": 
+        fig = px.bar(y=Teekate.index, x=Teekate.values, labels={'x': 'Õnnetuste arv'}, title='Õnnetuste arv erineva teekatte seisundiga teedel') 
+    return fig
+
+ilmastik_joonis(ilmastik.value, multi_choice.value, slider.value)
+
+
+# In[16]:
+
+
+# liiklusõnnetused liiklusolude kaupa kaupa
+@pn.depends( pn.widgets.RadioButtonGroup.param.value)   
+def liiklusolud(liik, multi_choice_value, slider_value):
+    df_kaart=data(slider_value, multi_choice_value)    
     
 
     # Counting the number of accidents for each time component
@@ -226,16 +296,16 @@ def liiklusolud(liik, slider_value):
         
     return fig
 
-liiklusolud(olukord.value, slider.value)
+liiklusolud(olukord.value, multi_choice.value, slider.value)
 
 
-# In[12]:
+# In[17]:
 
 
 # liiklusõnnetused osaleja tüüpide kaupa
 @pn.depends( pn.widgets.RadioButtonGroup.param.value)   
-def osalejad(liik, slider_value):
-    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]    
+def osalejad(liik, multi_choice_value, slider_value):
+    df_kaart=data(slider_value, multi_choice_value)  
     options=['Jalakäija osalusel', 'Kergliikurijuhi osalusel', 'Kaassõitja osalusel', 'Maastikusõiduki juhi osalusel', "Eaka (65+) mootorsõidukijuhi osalusel",  "Bussijuhi osalusel", "Veoautojuhi osalusel", "Ühissõidukijuhi osalusel", "Sõiduautojuhi osalusel", "Mootorratturi osalusel", "Mopeedijuhi osalusel", "Jalgratturi osalusel", "Alaealise osalusel", "Turvavarustust mitte kasutanud isiku osalusel", "Esmase juhiloa omaniku osalusel", "Mootorsõidukijuhi osalusel"]
 
     # Count the number of accidents for each participant type
@@ -257,17 +327,17 @@ def osalejad(liik, slider_value):
         fig = px.bar(y=õnnetusi.index, x=õnnetusi.values, labels={'x': 'Õnnetuste arv'}, title='Erinevat liiki õnnetuste arv')
         return fig
 
-osalejad(õnnetused.value, slider.value)
+osalejad(õnnetused.value, multi_choice.value, slider.value)
 
 
-# In[13]:
+# In[18]:
 
 
 # õnnetuste liigid
 
 @pn.depends( pn.widgets.DateRangeSlider.param.value_throttled)
-def onnetused_joonis(slider_value):
-    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]
+def onnetused_joonis(slider_value, multi_choice_value):
+    df_kaart=data(slider_value, multi_choice_value)
     
     # Counting the number of accidents for each time component
     õnnetusi = df_kaart['Liiklusõnnetuse liik [3]'].value_counts().sort_index().sort_values()
@@ -278,18 +348,18 @@ def onnetused_joonis(slider_value):
     
     return fig
 
-onnetused_joonis(slider.value)
+onnetused_joonis(slider.value, multi_choice.value)
 
 
-# In[14]:
+# In[19]:
 
 
 # Extracting year, month, day of week, and hour of day from the 'time_of_accident' column
 
 #@pn.depends( pn.widgets.Button.param.button_type.objects)
 @pn.depends( pn.widgets.RadioButtonGroup.param.value)
-def perioodid_joonis(perioodid, slider_value):
-    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]
+def perioodid_joonis(perioodid, slider_value, multi_choice_value):
+    df_kaart=data(slider_value, multi_choice_value)
     
     # Counting the number of accidents for each time component
     Aastad = df_kaart['year'].value_counts().sort_index()
@@ -309,7 +379,7 @@ def perioodid_joonis(perioodid, slider_value):
     
     return fig
 
-perioodid_joonis(perioodid.value, slider.value)
+perioodid_joonis(perioodid.value, slider.value, multi_choice.value)
 
 
 # In[ ]:
@@ -318,20 +388,20 @@ perioodid_joonis(perioodid.value, slider.value)
 
 
 
-# In[15]:
+# In[20]:
 
 
 df.info()
 
 
-# In[16]:
+# In[21]:
 
 
 # Kaart liiklusõnnetustega
 
 @pn.depends( pn.widgets.DateRangeSlider.param.value_throttled)
-def kaart(slider_value):
-    df_kaart=df.loc[pd.to_datetime(slider_value[0]):pd.to_datetime(slider_value[1])]
+def kaart(slider_value, multi_choice_value):
+    df_kaart=data(slider.value, multi_choice.value)
     fig = px.scatter_mapbox(df_kaart, lat ="lat", lon="lon", height=600, zoom=6.5)
     fig.update_layout(mapbox_style="open-street-map")
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
@@ -341,39 +411,43 @@ def kaart(slider_value):
 #kaart(lider.value)
 
 
-# In[17]:
+# In[22]:
 
 
 # Function to display current year
 @pn.depends( pn.widgets.DateRangeSlider.param.value_throttled)
 def tiitel(slider):
-    return '### Liiklusõnnetuste statistika ajavahemikul '
+    return '# Liiklusõnnetuste statistika ajavahemikul '
 
 
 # ## Dashboard
 
-# In[21]:
+# In[31]:
 
 
 dashboard = pn.WidgetBox(pn.Row(
                              pn.Column(
                                  pn.Row(tiitel, slider),
-                                 pn.Row(pn.bind(kaart, slider)),
-                                 pn.Row(perioodid),
-                                 pn.bind(perioodid_joonis, perioodid, slider), align="start",          
-                                 sizing_mode="stretch_width"), 
-                             pn.Column(
                                  pn.Row(
-                                     pn.bind(statistika, slider, 'Õnnetusi'),
-                                     pn.bind(statistika, slider, 'Vigastatuid'),
-                                     pn.bind(statistika, slider, 'Hukkunuid')
-                                 ),
+                                     pn.bind(statistika, slider, multi_choice, 'Õnnetusi'),
+                                     pn.bind(statistika, slider, multi_choice, 'Vigastatuid'),
+                                     pn.bind(statistika, slider, multi_choice, 'Hukkunuid'), align=('center')),
+                                 multi_choice,
+                                 pn.Row(perioodid),
+                                 pn.bind(perioodid_joonis, perioodid, slider, multi_choice), 
+                                 align="start", sizing_mode='stretch_width'), 
+                             pn.Column(
+                                 pn.bind(kaart, slider, multi_choice),
                                  õnnetused,
-                                 pn.bind(osalejad, õnnetused, slider),
-                                 olukord,
-                                 pn.bind(liiklusolud, olukord, slider)
-                             ))
-                        )
+                                 pn.bind(osalejad, õnnetused, multi_choice, slider)),
+                            pn.Column(
+                                olukord,
+                                pn.bind(liiklusolud, olukord, multi_choice, slider),
+                                ilmastik,
+                                pn.bind(ilmastik_joonis, ilmastik, multi_choice, slider)
+                             )
+                        ))
+
 dashboard.servable()
 
 
