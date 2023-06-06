@@ -1,2 +1,6 @@
 *.csv
 *.sqlite
+*.out
+nohup.out
+.ipynb_checkpoints/alguse_asi-checkpoint.ipynb
+.ipynb_checkpoints/dashboard-checkpoint.ipynb
