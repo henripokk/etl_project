@@ -79,3 +79,5 @@ memory usage: 6.5+ MB
 2023-06-06 20:42:40,631 W-1005 (FIXED_SIZING_MODE): 'fixed' sizing mode requires width and height to be set: HTML(id='1013', ...)
 2023-06-06 20:42:41,366 WebSocket connection opened
 2023-06-06 20:42:41,368 ServerConnection created
+2023-06-06 22:19:58,222 error on read: [Errno 113] No route to host
+2023-06-06 22:19:58,222 WebSocket connection closed: code=None, reason=None
