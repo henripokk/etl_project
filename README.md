@@ -45,3 +45,4 @@ https://github.com/henripokk/etl_project
 2.3 Andmete puhastamine ja korrastamine
 
 2.4 Dashboardi laadimine
+2.5 Dashboardi täiendamine, UX osa muutmine
