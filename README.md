@@ -57,10 +57,10 @@ Dashboard on kättesaadavaks tehtud ka Github keskkonnas: https://biogren.github
 
 ## 3 Projekti käik
 
-* 18.05 Initial commit - Loodi projekti kaust gitub keskkonda ning esimesed failid.
+* 18.05 Initial commit - Loodi projekti kaust gitub keskkonda, teised grupiliikmed ühinesid ja loodi failid: readme fail ja licence fail.
 * 23.05 Loodi gitignore fail
-* 28.05 data clean vol1 - Loodi fail andmete esialgseks sisselugemiseks. Andmete vaatlus ja esmane puhastamine
-* 30.05 Corrected CRS transformation and map visualization - parandati GPS puntide kordinaatide süsteemi ja pisiparandused andmetes
+* 28.05 Esimene andmete puhastamise protsess - loodi fail andmete esialgseks sisselugemiseks. Laeti alla Liiklusõnnetused_2011_2021.csv töödeldud fail lehelt https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed. Toimus andmete vaatlus ja esmane puhastamine - eemaldati puuduvate väärtustega read. Otsiti keskmisest väärtusest suurte kõrvalkalletega liiga suuri ja liiga väikeseidväärtusi, mis ilmselt olid andmete sisestamisel tekkinud vead. Need read eemaldati.
+* 30.05 Parandati GPS puntide koordinaatide süsteemi ja pisiparandused andmetes. Koordinaadid olid esitatud EPSG:3301 süsteemis, mis tuli ümber teisendada geograafilisteks (EPSG:4326). 
 * 31.05 Eksporditi g+GitHubi .csv fail liiklusõnnetuste kohta lehelt. Dashboard faili Kirjutati juurde puhastatud andmete eksport ja loodi esialgne dashboard fail
 * 1.06 Dashboardi uuendused. Probleem, et dashboard ei tööta ja toimus vea otsimine.
 * 2.06 Loodi esimene dashboard versioon osaliselt puhastatud andmetest. 
