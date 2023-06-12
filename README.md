@@ -7,7 +7,7 @@ Dashboardi eesmärgiks on anda ülevaade Eesti liiklusõnnetustest aastatel 2011
 ## 2. dashboardi kasutamine
 
 ### 2.1 Eeldused süsteemile
-Dashboardi kasutamiseks on vajalik Phytoni keskkonna kasutamine. Vajalik on alljärgnevad Pythoni paketid ja nende versioonid:
+Dashboardi kasutamiseks on vajalik Pythoni ja selle pakettide kasutamine. Vajalik on alljärgnevad Pythoni paketid ja nende versioonid:
 
 * pandas==2.0.1
 * numpy==1.23.1
@@ -31,12 +31,12 @@ Dashboardi kasutamiseks tuleb githubi keskkonnast projektiga seotud failid ning 
 
 
 ### 2.3 Andmete puhastamine ja korrastamine
-Esimesena tuleb käima panna alguse_asi.ipynb, mis eeldab, et data.csv on failiga samas kataloogis. Antud faili eesmärk on avada liiklusõnnetuste andmestik, see puhastada ja korrastada. Andmetele liideti imateenistuse ilmaolude andmed. Peamised tegevused:
+Esimesena tuleb käima panna alguse_asi.ipynb, mis eeldab, et data.csv on failiga samas kataloogis. Antud faili eesmärk on avada liiklusõnnetuste andmestik, see puhastada ja korrastada. Andmetele liideti ilmateenistuse ilmaolude andmed. Peamised tegevused:
 
 * andmete sisselugemine data.csv failist ning ilma andmete allalaadimine
 * Koordinaadid olid esitatud EPSG:3301 süsteemis, mis tuli ümber teisendada geograafilisteks (EPSG:4326). 
 * Mõningad liiklusõnnetuste asukohad olid väljaspool Eestis, näiteks Lätis, Tiibetis ja Aafrikas. Need eemaldasime edasisest andmeanalüüsist. 
-* Samuti tuli piirkiiruse veeru andmeid korrastada, sest seal esines mittetäisarvulisi väärtusi.
+* Samuti tuli piirkiiruse veeru andmeid korrastada, sest seal esines mittetäisarvulisi väärtusi ja piirkiirusi üle 120 km/h, mida ei ole Eestis reaalselt kunagi esinenud.
 * Andmetüüpide parandused - kuupäevad datetime, numbrid numnriteks, kategooriad kategooriateks jne 
 * Salvestati fail df_clean.csv mida kasutati edaspidi dashboardi koostamisel
 
