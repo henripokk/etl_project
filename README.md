@@ -53,19 +53,20 @@ Dashboardi laadimise eeldus on see on on teostatud edukalt andmete puhastamise j
 ### 2.5 Dashboardi kasutamine
 Dashboard on dünaamiline ja selle erinevaid nuppe ja liugurit kasutades on võimalik valida soovitud ajaperiood mille kohta statistikat soovitakse teada. Lisaks on võimalik nuppude abil välja filtreerida soovitud liiklusõnnetuse osapooled. Jooniste nuppude abil saab valida millist statistikat antud liiklusõnnetuste kohta teada saada soovitakse. On võimalik vaadata andmeid liiklusõnnetuste arvust erinevatel perioodidel, liiklusõnnetuste osaliste jaotust, liiklusolude ja liiklustingimuste andmeid liiklusõnnetuse hetkel.
 
-## Projekti käik
+Dashboard on kättesaadavaks tehtud ka Github keskkonnas: https://biogren.github.io/etl_project-1/
 
-## Projekti logi
-18.05 Initial commit Loodi projekti kaust gitub keskkonda ning esimesed failid.
-23.05 Loodi gitignore fail
-28.05 data clean vol1 Loodi fail andmete esialgseks sisselugemiseks. Andmete vaatlus ja esmane puhastamine
-30.05 Corrected CRS transformation and map visualization parandati GPS puntide kordinaatide süsteemi ja pisiparandused andmetes
-31.05 Eksporditi g+GitHubi .csv fail liiklusõnnetuste kohta lehelt: ... Dashboard faili Kirjutati juurde puhastatud andmete eksport ja loodi esialgne dashboard fail
-1.06 Dashboardi uuendused. Probleem, et dashboard ei tööta ja toimus vea otsimine.
-2.06 Loodi esimene dashboard versioon osaliselt puhastatud andmetest. 
-3.06 Toimus dashboardi koodi uuendamine. Lisati uusi jooniseid olemasolevatest andmestikest ja testiti visuaalselt väljanähemist.
-4.06 Dashboadi koodi uuendati. Muudeti osade jooniste paigutust ja andmete esitamisviisi-osad andmed visati jooniselt välja, kuna ei sobinud joonisele.
-5.06 Lisati andmetikule juurde nelja ilmajaama temperatuuri andmed. Samuti puhastati andmeid visates välja normaaljaotusest oluliselt suuremad ja väiksemad väärtused (outliers), korrigeeriti piirkiiruse väärtused eemaldades liiga kõrged väärtused. Samuti eemaldati liiklusõnnetuste asukohtadest punktid, is asusid Eestist väljaspool näites Aafrikas ja Lätis. 
-6.06 Toimus dashboardil oleva kaarti koodi uuendamine. Kaart paigutati dashboardi keskele. Dashboardi joonistelt eemaldati automaatselt määratud taust, samuti muudeti ülks tulpdiagrammi joonis joondiagrammi joonise vastu välja. Elementide paigutust muudeti vastavalt loodus UX disaini dokumendile. 
-11.06 Readme dokumenti tehtud töödelisamine. Puhastati koodi, kus eemaldati paketid, mida dashboardi tööle saamiseks pole vajalikud. Jäeti alles vaid olulised pketid, mida peab kasutaja alla laadima. Eemaldatud sai ka tekstidokument nõuete kohta, kuna nõuded said lisatud koodi faili. Korrastati Githubi keskkonda, kust eemaldati mitu pythoni faili chackpointide kohta. Need lisandusid automaatselt koodi käivitamisel, kuid pole vajalikud eraldi esitamiseks. 
-12.06 Toimus readme dokumendi täiendamine. Korrastati ja lisati uut informatsiooni projekti tööde kohta, täiendati readme faili struktuuri. 
+## 3 Projekti käik
+
+* 18.05 Initial commit - Loodi projekti kaust gitub keskkonda ning esimesed failid.
+* 23.05 Loodi gitignore fail
+* 28.05 data clean vol1 - Loodi fail andmete esialgseks sisselugemiseks. Andmete vaatlus ja esmane puhastamine
+* 30.05 Corrected CRS transformation and map visualization - parandati GPS puntide kordinaatide süsteemi ja pisiparandused andmetes
+* 31.05 Eksporditi g+GitHubi .csv fail liiklusõnnetuste kohta lehelt. Dashboard faili Kirjutati juurde puhastatud andmete eksport ja loodi esialgne dashboard fail
+* 1.06 Dashboardi uuendused. Probleem, et dashboard ei tööta ja toimus vea otsimine.
+* 2.06 Loodi esimene dashboard versioon osaliselt puhastatud andmetest. 
+* 3.06 Toimus dashboardi koodi uuendamine. Lisati uusi jooniseid olemasolevatest andmestikest ja testiti visuaalselt väljanähemist.
+* 4.06 Dashboadi koodi uuendati. Muudeti osade jooniste paigutust ja andmete esitamisviisi-osad andmed visati jooniselt välja, kuna ei sobinud joonisele.
+* 5.06 Lisati andmetikule juurde nelja ilmajaama temperatuuri andmed. Samuti puhastati andmeid visates välja normaaljaotusest oluliselt suuremad ja väiksemad väärtused (outliers), korrigeeriti piirkiiruse väärtused eemaldades liiga kõrged väärtused. Samuti eemaldati liiklusõnnetuste asukohtadest punktid, is asusid Eestist väljaspool näites Aafrikas ja Lätis. 
+* 6.06 Toimus dashboardil oleva kaardi koodi uuendamine. Kaart paigutati dashboardi keskele. Dashboardi joonistelt eemaldati automaatselt määratud taust, samuti muudeti ülks tulpdiagrammi joonis joondiagrammi joonise vastu välja. Elementide paigutust muudeti vastavalt loodud UX disaini dokumendile. 
+* 11.06 Read.me dokumenti tehtud tööde lisamine. Puhastati koodi, kus eemaldati paketid, mida dashboardi tööle saamiseks pole vajalikud. Jäeti alles vaid olulised pketid, mida peab kasutaja alla laadima. Eemaldatud sai ka tekstidokument nõuete kohta, kuna nõuded said lisatud koodi faili. Korrastati Githubi keskkonda, kust eemaldati mitu pythoni faili chackpointide kohta. Need lisandusid automaatselt koodi käivitamisel, kuid pole vajalikud eraldi esitamiseks. 
+* 12.06 Toimus readme dokumendi täiendamine. Korrastati ja lisati uut informatsiooni projekti tööde kohta, täiendati readme faili struktuuri. 
