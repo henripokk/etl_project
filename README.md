@@ -25,9 +25,9 @@ Dashboardi kasutamiseks on vajalik Pythoni ja selle pakettide kasutamine. Vajali
 
 ### 2.2 dashboardi andmed
 
-Andmed tuleb laadida lehelt: https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed ja alla tuleb laadida andmetik nimega "Liiklusõnnetused_2011_2021.csv töödeldud". Konreetne fail tuleb ümber nimetada data.csv, mida kasutatakse esimese pythoni programmikoodi failis nimega alguse_asi.ipynb. Selle programmi läbitöötamise tulemusena parandatakse ja puhastatakse andmeid, samuti liidetakse juurde neljast ilmajaamast päris temperatuuri andmed. Antud programmi tulemusena valmib uus csv fail nimega df_cleaned. Viimast kasutatakse dashboard.ipynb failis. 
+Andmed tuleb laadida lehelt: https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed ja alla tuleb laadida andmetik nimega "Liiklusõnnetused_2011_2021.csv töödeldud". Konkreetne fail tuleb ümber nimetada data.csv, mida kasutatakse esimese pythoni programmikoodi failis nimega alguse_asi.ipynb. Selle programmi läbitöötamise tulemusena parandatakse ja puhastatakse andmeid, samuti liidetakse juurde neljast ilmajaamast pärit temperatuuri andmed. Antud programmi tulemusena valmib uus csv fail nimega df_cleaned. Viimast kasutatakse dashboard.ipynb failis. 
 
-Dashboardi kasutamiseks tuleb githubi keskkonnast projektiga seotud failid ning alla laetud andmefail paigutada ühte kataloogi ja failid tööle panna õiges järjekorras.
+Dashboardi kasutamiseks tuleb githubi keskkonnast projektiga seotud failid ning alla laetud programmifail paigutada ühte kataloogi ja failid tööle panna õiges järjekorras.
 
 
 ### 2.3 Andmete puhastamine ja korrastamine
