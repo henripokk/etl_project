@@ -1,7 +1,7 @@
 # Liikusõnnetuste andmete näidikute tahvel
 
 ## 1. Sissejuhatus
-Dashboardi eesmärgiks on anda ülevaade Eesti liiklusõnnetustest aastatel 2011-2022 (https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed), nende osalistest, liiklusoludest ja tingimustest õnnetuste toimumise htekel. Dashboard kasutab sisendina avalikult kättesaadavat liiklusõnnetuste andmestiku avaandmete lehelt ja ilmastiku andmestiku ilmateenistuse kodulehelt. Loodud dashboard on dünaamiline, mis tähendab, et kasutajal on võimalus valiku nuppude abil ehitada üles enda vajadustele vastav päring. 
+Dashboardi eesmärgiks on anda ülevaade Eesti liiklusõnnetustest aastatel 2011-2022 (https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed), nende osalistest, liiklusoludest ja tingimustest õnnetuste toimumise htekel. Dashboard kasutab sisendina avalikult kättesaadavat liiklusõnnetuste andmestiku avaandmete lehelt ja ilmastiku andmestiku ilmateenistuse kodulehelt (https://www.ilmateenistus.ee). Loodud dashboard on dünaamiline, mis tähendab, et kasutajal on võimalus valiku nuppude abil ehitada üles enda vajadustele vastav päring. 
 
 
 ## 2. dashboardi kasutamine
